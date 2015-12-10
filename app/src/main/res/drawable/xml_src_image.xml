@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <size android:height="@dimen/dim80" android:width="@dimen/dim80">
+
+    </size>
+    <solid android:color="@color/profile_image_bg"></solid>
+
+</shape>

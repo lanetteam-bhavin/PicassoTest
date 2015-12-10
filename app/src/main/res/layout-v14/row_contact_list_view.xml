@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_marginTop="32dp"
+        android:id="@+id/sort_key_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="20dp"
+        android:background="@color/contacts_header">
+
+        <TextView
+            android:id="@+id/sort_key"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:layout_marginLeft="10dip"
+            android:textColor="@android:color/holo_blue_bright"
+            android:textSize="15sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/llMain"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:padding="5dp">
+
+        <FrameLayout
+            android:layout_width="@dimen/dim65"
+            android:layout_height="@dimen/dim65">
+
+            <!--            <iamxam.customviews.CircularImageView
+                            android:id="@+id/iv_contact_row_user_image"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:scaleType="centerCrop"
+                            android:src="@drawable/xml_src_image"
+                            app:border_width="0dp"/>-->
+
+
+            <com.example.lcom53.picassotest.RecyclingImageView
+                android:id="@+id/iv_contact_row_user_image"
+                android:scaleType="centerInside"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/xml_src_image" />
+
+            <ImageView
+                android:id="@+id/iv_play"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:scaleType="centerCrop"
+                android:visibility="gone" />
+
+            <!--android:src="@drawable/xml_src_image"-->
+            <!--android:background="@drawable/border_gray"-->
+            <!-- <LinearLayout
+                 android:layout_width="match_parent"
+                 android:layout_height="match_parent"
+                 android:background="@drawable/profile_pic_round_bg" />-->
+        </FrameLayout>
+
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="top"
+            android:layout_weight="1"
+            android:gravity="top"
+            android:orientation="vertical"
+            android:paddingLeft="5dp"
+            android:paddingRight="5dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="top"
+                android:gravity="top">
+
+                <TextView
+                    android:id="@+id/tv_contact_row_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:background="@android:color/transparent"
+                    android:ellipsize="end"
+                    android:maxLines="2"
+                    android:paddingBottom="5dp"
+                    android:paddingRight="@dimen/dim15"
+                    android:paddingTop="@dimen/camera_image_margin_right"
+                    android:singleLine="true"
+                    android:text="Contact Name"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/dim_font_verify_login"
+                    android:typeface="monospace" />
+
+                <TextView
+                    android:id="@+id/tv_blocked_status"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="top"
+                    android:text="Blocked"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blockstatus"
+                    android:textSize="@dimen/dim_font_btn"
+                    android:typeface="monospace"
+                    android:visibility="gone" />
+
+                <TextView
+                    android:id="@+id/tv_you"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_gravity="top"
+                    android:elevation="0dp"
+                    android:text="You"
+                    android:textAllCaps="false"
+                    android:textColor="@color/blockstatus"
+                    android:textSize="@dimen/dim_font_btn"
+                    android:typeface="monospace"
+                    android:visibility="gone" />
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:paddingTop="@dimen/camera_image_margin_right">
+
+                <TextView
+                    android:id="@+id/tv_contact_row_user_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="@dimen/dim50"
+                    android:background="@android:color/transparent"
+                    android:ellipsize="end"
+                    android:maxLines="1"
+                    android:singleLine="true"
+                    android:text="user name"
+                    android:textColor="@color/gray_edittext"
+                    android:textSize="@dimen/dim_font_action" />
+
+                <TextView
+                    android:id="@+id/blank"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:maxLines="1"
+                    android:text="+91 9999999999"
+                    android:textColor="@color/dark_blue"
+                    android:textSize="@dimen/dim_font_btn"
+                    android:visibility="invisible" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/seperator"
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:layout_weight="1"
+                android:background="@color/light_gray"
+                android:visibility="gone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_addcontact"
+            android:layout_width="40dp"
+            android:layout_height="22dp"
+            android:layout_gravity="center_vertical"
+            android:elevation="0dp"
+            android:gravity="center"
+            android:text="Add"
+            android:textAllCaps="false"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dim_font_btn"
+            android:typeface="monospace"
+            android:visibility="gone" />
+
+
+    </LinearLayout>
+
+</LinearLayout>
