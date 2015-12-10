@@ -17,6 +17,7 @@ import android.support.v7.app.ActionBar;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.ViewPropertyAnimator;
@@ -47,7 +48,7 @@ import java.util.Arrays;
 public class Main2Activity extends AppCompatActivity {
     ListView listView;
     ActionBar actionBar;
-    public String response = "{\"type\":\"getcntcs\",\"no\":15,\"cntcs\":[{\"friend\":\"anitest\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/21201DF0-9530-46B7-9347-41C5A8CBD57C-2441-0000043381359096anitest.jpg\",\"fn\":\"ani\",\"ln\":\"Loop\",\"message\":\"adsadsasasasfasdfasdfl;kjlsdf\",\"email\":\"lanetteam.anish@gmail.com\",\"joined_at\":1447129400309,\"show_date_created\":true,\"color\":\"#A822A1\"},{\"friend\":\"b\",\"avatar\":null,\"fn\":\"b\",\"ln\":\"\",\"message\":null,\"email\":\"federico.carrone+b@lambdaclass.com\",\"joined_at\":1447276876396,\"show_date_created\":true,\"color\":\"ffffff\"},{\"friend\":\"djckiss\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/EA64DDCC-0967-4C86-9227-396EBCE573D4-8938-000007F467BF3677djckiss.jpg\",\"fn\":\"Sikis\",\"ln\":\"Oneal\",\"message\":\"\",\"email\":\"djckiss@gmail.com\",\"joined_at\":1447169399393,\"show_date_created\":true,\"color\":\"#6208FF\"},{\"friend\":\"fedetest\",\"avatar\":\"\",\"fn\":\"Federico\",\"ln\":\"Carrone\",\"message\":\"\",\"email\":\"federico.carrone+test@lambdaclass.com\",\"joined_at\":1447776596897,\"show_date_created\":true,\"color\":\"#BC9C08\"},{\"friend\":\"fruzilah\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/132D0FD6-F99F-4D72-8047-DA151CE27EED-389-000000872E8A1879fruzilah.jpg\",\"fn\":\"Zilah\",\"ln\":\"Fru\",\"message\":\"\",\"email\":\"bessemzilah@yahoo.com\",\"joined_at\":1447463901735,\"show_date_created\":true,\"color\":\"#875FFF\"},{\"friend\":\"keka_moma\",\"avatar\":\"\",\"fn\":\"Keka\",\"ln\":\"Moma\",\"message\":\"\",\"email\":\"keka.moma@icloud.com\",\"joined_at\":1447792724143,\"show_date_created\":true,\"color\":\"#E80C97\"},{\"friend\":\"kekamoma\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/394C428C-4E33-4B41-B988-6B09587AE5AA-478-00000097AC50070Ckekamoma.jpg\",\"fn\":\"Keka\",\"ln\":\"Moma\",\"message\":\"Fear, you face it straight\",\"email\":\"keka.c.moma@gmail.com\",\"joined_at\":1447285405403,\"show_date_created\":true,\"color\":\"#19AE0A\"},{\"friend\":\"madhutest\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/13A0BA1F-E611-4443-B620-E74FE232CCC7-4828-000004CD9778E624madhutest.jpg\",\"fn\":\"Madhu\",\"ln\":\"Chauhan\",\"message\":\"\",\"email\":\"chauhanmadhu.dev@gmail.com\",\"joined_at\":1447655247590,\"show_date_created\":true,\"color\":\"#F593D1\"},{\"friend\":\"manuolmos\",\"avatar\":\"\",\"fn\":\"Manuel\",\"ln\":\"Olmos\",\"message\":\"\",\"email\":\"manuolmos88@gmail.com\",\"joined_at\":1447777054491,\"show_date_created\":true,\"color\":\"#2D52B5\"},{\"friend\":\"ndohmo\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/3CDE088B-69CC-4CB7-A32F-2A82E3E124DA-1959-000003F96DE850EA.jpg\",\"fn\":\"Ndohnwi\",\"ln\":\"Moma\",\"message\":\"\",\"email\":\"ndohmo@gmail.com\",\"joined_at\":1448418188600,\"show_date_created\":true,\"color\":\"#2B44B5\"},{\"friend\":\"ndohmo20\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/6C0B5086-46AB-4067-A02D-83FF68398DFD-1014-000001B89C8C9297.jpg\",\"fn\":\"Ndohnwi\",\"ln\":\"Moma\",\"message\":\"\",\"email\":\"ndohmo@yahoo.com\",\"joined_at\":1447241821868,\"show_date_created\":true,\"color\":\"#BA32A1\"},{\"friend\":\"rahitest\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/76CD9E03-23E4-4503-971B-3214B38A8719-1106-00000161EDDA9099rahitest.jpg\",\"fn\":\"rahi\",\"ln\":\"test\",\"message\":\"\",\"email\":\"rahi.lanetteam@gmail.com\",\"joined_at\":1447130142307,\"show_date_created\":true,\"color\":\"#666605\"},{\"friend\":\"s_njem\",\"avatar\":\"\",\"fn\":\"Sikod\",\"ln\":\"Njem\",\"message\":\"\",\"email\":\"teghenicha@yahoo.com\",\"joined_at\":1447906641261,\"show_date_created\":true,\"color\":\"#D400DA\"},{\"friend\":\"sohroyale\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/8167E803-1835-45EC-95E3-ABB45795464F-4178-0000073E2FDD7E94.jpg\",\"fn\":\"Soh\",\"ln\":\"Royale\",\"message\":\"\",\"email\":\"soh2.0royale@yahoo.com\",\"joined_at\":1448743757352,\"show_date_created\":true,\"color\":\"#FF6E27\"},{\"friend\":\"viraltest\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/22499A06-CBB8-4DED-AAA9-2AF8BC546938-6776-00000B09733C5CEA.jpg\",\"fn\":\"Viral\",\"ln\":\"Test\",\"message\":\"\",\"email\":\"viral.lanet@gmail.com\",\"joined_at\":1447130633887,\"show_date_created\":true,\"color\":\"#FF1D12\"},{\"friend\":\"sidi#sidtest\",\"fn\":\"sidi\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/65C135F8-A8A4-4438-A64F-956A8E871ED2-5576-000021449149AE97sidtest.jpg\"},{\"friend\":\"anothercircle#kekamoma\",\"fn\":\"Another Circle\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/6447AFE1-AAE4-45E6-9358-7A191417D70B-528-000000EC3AB02EBCkekamoma.jpg\"},{\"friend\":\"bold#kekamoma\",\"fn\":\"Bold\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/981AE136-DAB4-408A-8BA9-8C40E40C49AD-485-0000010CEE5BD2C8kekamoma.jpg\"},{\"friend\":\"final#anitest\",\"fn\":\"Final\",\"avatar\":\"\"},{\"friend\":\"iceream#anitest\",\"fn\":\"Iceream\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/459DCD9A-4B11-4B91-B81A-69E1F441B9D9-7071-00000BB163B77212anitest.jpg\"},{\"friend\":\"ios#rahitest\",\"fn\":\"ios\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/5D4A5367-50D4-479B-930D-E052F59299AF-10282-00001526B1F12EE4rahitest.jpg\"},{\"friend\":\"kiyu#anitest\",\"fn\":\"Kiyu\",\"avatar\":\"\"},{\"friend\":\"me#rahitest\",\"fn\":\"me\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/7FE59A35-AB29-415C-9F78-66CFD1E999C2-43665-00005BC47B874BC4rahitest.jpg\"},{\"friend\":\"mycircle#kekamoma\",\"fn\":\"My Circle One\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/81F378F7-072A-445C-9626-0EA1BFF2EF9D-528-000000EB9B6C4183kekamoma.jpg\"},{\"friend\":\"nrsu#anitest\",\"fn\":\"Nrsu \",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/39D59C57-140A-445C-A649-D0E007C33FE3-7071-00000BB5889FC8B0anitest.jpg\"},{\"friend\":\"paneri#rahitest\",\"fn\":\"paneri\",\"avatar\":\"\"},{\"friend\":\"shiv#anitest\",\"fn\":\"Shiv\",\"avatar\":\"\"},{\"friend\":\"shivani#anitest\",\"fn\":\"Shivani\",\"avatar\":\"\"},{\"friend\":\"testbannernotif#madhutest\",\"fn\":\"testBannerNotif\",\"avatar\":\"\"},{\"friend\":\"tiger#rahitest\",\"fn\":\"tiger\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/1002247E-000D-4621-A4C2-E46D38FF293B-353-0000004A36D20C46rahitest.jpg\"},{\"friend\":\"uhd#rahitest\",\"fn\":\"Uhd\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/144F87FE-9B6F-4C39-AD30-92E824FF00AD-897-000000CC762BCB06rahitest.jpg\"},{\"friend\":\"umm#rahitest\",\"fn\":\"umm\",\"avatar\":\"\"},{\"friend\":\"vb#anitest\",\"fn\":\"Vb\",\"avatar\":\"\"},{\"friend\":\"yr#anitest\",\"fn\":\"Yr\",\"avatar\":\"\"}],\"user\":\"sidtest\",\"code\":0,\"id\":\"a23bf2\"}";
+    public String response = " {\"type\":\"getcntcs\",\"no\":10,\"cntcs\":[{\"friend\":\"anitest\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/ECCDDC4B-37DB-4B01-B072-BD7C35D420FD-1561-000001BBC9FC0F45anitest.jpg\",\"fn\":\"ani\",\"ln\":\"Loop\",\"message\":\"kajSHD K ASKFDJ HASKDFJH ASDKFJHAS DFKHJASD FKJAHSDF KSAJDHF ASKDFHJAS DKFJHASDF KJAHSDF KASDJFFHJASDF\",\"email\":\"lanetteam.anish@gmail.com\",\"joined_at\":1447129400309,\"show_date_created\":true,\"color\":\"#2DA887\"},{\"friend\":\"bhavindoshi\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/twko98A9nLwlIcai.jpg\",\"fn\":\"Bhavin hdhhddh\",\"ln\":\"Doshi\",\"message\":\"All will well !\",\"email\":\"bhavin.doshi1989@gmail.com\",\"joined_at\":1449038035286,\"show_date_created\":true,\"color\":\"#9f211b\"},{\"friend\":\"dhvanishah\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/64CFE275-2A58-4FA8-8786-8DE6DE5C61C3-2118-00000271618A1C8Edhvanishah.jpg\",\"fn\":\"Dhvani\",\"ln\":\"Shah\",\"message\":\"hello how are you\",\"email\":\"laneetteam.dhvani@gmail.com\",\"joined_at\":1447675145001,\"show_date_created\":true,\"color\":\"#FF6060\"},{\"friend\":\"djckiss\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/81FD0935-A1FC-444C-BDE7-11A137EA2FA0-4180-0000046A2EF9EB82djckiss.jpg\",\"fn\":\"Sikis\",\"ln\":\"Oneal\",\"message\":\"\",\"email\":\"djckiss@gmail.com\",\"joined_at\":1447169399393,\"show_date_created\":true,\"color\":\"#6208FF\"},{\"friend\":\"keka_moma\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/F54C6B42-A770-4564-BD38-1781A7E0D235-228-000000080C1D3E8Akeka_moma.jpg\",\"fn\":\"Keka\",\"ln\":\"Moma\",\"message\":\"\",\"email\":\"keka.moma@icloud.com\",\"joined_at\":1447792724143,\"show_date_created\":true,\"color\":\"#666359\"},{\"friend\":\"ndohmo\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/D7845A83-E7C1-4708-A6C4-3A95ABC2CD42-764-0000012ACA854AE9.jpg\",\"fn\":\"Ndohnwi\",\"ln\":\"Moma\",\"message\":\"\",\"email\":\"ndohmo@gmail.com\",\"joined_at\":1449026687003,\"show_date_created\":true,\"color\":\"#FD1756\"},{\"friend\":\"niteshpandav\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/AyHzUgQdwLdNE9mY.jpg\",\"fn\":\"Nitesh\",\"ln\":\"Pandav\",\"message\":\"\",\"email\":\"nitesh.lanetteam@gmail.com\",\"joined_at\":1449221254603,\"show_date_created\":true,\"color\":\"#a96676\"},{\"friend\":\"rajtest\",\"avatar\":\"\",\"fn\":\"raj\",\"ln\":\"kapoor\",\"message\":\"\",\"email\":\"rajkapoordev@gmail.com\",\"joined_at\":1448532730950,\"show_date_created\":true,\"color\":\"#F443C0\"},{\"friend\":\"shivani_chauhan\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/VWgw3rVxtIZlIttO.jpg\",\"fn\":\"Shivani\",\"ln\":\"Chauhan\",\"message\":\"\",\"email\":\"shivanic1986@gmail.com\",\"joined_at\":1449196652469,\"show_date_created\":true,\"color\":\"\"},{\"friend\":\"viraltest\",\"avatar\":\"https://s3.amazonaws.com/s3-imxam-development/2346B6AD-C1EE-47FB-9A68-CFCAB6D4C7F7-1680-000001B41980B9EBviraltest.jpg\",\"fn\":\"Viral\",\"ln\":\"Test\",\"message\":\"Hello how are you\",\"email\":\"viral.lanet@gmail.com\",\"joined_at\":1447130633887,\"show_date_created\":true,\"color\":\"#FF1D12\"}],\"user\":\"sidtest\",\"code\":0,\"id\":\"a23bf2\"}";
     ArrayList<contact> contactArrayList = new ArrayList<>();
     private int mShortAnimationDuration;
     ImageLoader imageLoader = ImageLoader.getInstance();
@@ -59,16 +60,20 @@ public class Main2Activity extends AppCompatActivity {
     Spinner spinner;
     Bitmap bmp;
     boolean isShow = true;
+    private String TAG = Main2Activity.class.getSimpleName();
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
         actionBar = getSupportActionBar();
-        actionBar.setTitle("This is well");
+        String string = "This is well";
+        string = string.toLowerCase().replaceAll("\\s+", "").trim();
+        Log.d(TAG, "String is :" + string);
+        actionBar.setTitle(string);
         listView = (ListView) findViewById(R.id.listView);
         expanded_image = (ImageView) findViewById(R.id.expanded_image);
-        mShortAnimationDuration = getResources().getInteger(android.R.integer.config_longAnimTime);
+        mShortAnimationDuration = getResources().getInteger(android.R.integer.config_shortAnimTime);
         options = new DisplayImageOptions.Builder()
                 .showImageOnLoading(R.drawable.xml_src_image)
                 .showImageForEmptyUri(R.drawable.xml_src_image)
@@ -174,22 +179,22 @@ public class Main2Activity extends AppCompatActivity {
 
             }
         });
-//        View decorView = getWindow().getDecorView();
-//        decorView.setOnSystemUiVisibilityChangeListener
-//                (new View.OnSystemUiVisibilityChangeListener() {
-//                    @Override
-//                    public void onSystemUiVisibilityChange(int visibility) {
-//                        // Note that system bars will only be "visible" if none of the
-//                        // LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set.
-//                        if ((visibility & View.SYSTEM_UI_FLAG_FULLSCREEN) == 0) {
-//                            // TODO: The system bars are visible. Make any desired
-//                            actionBar.show();
-//                        } else {
-//                            // TODO: The system bars are NOT visible. Make any desired
-//                            actionBar.hide();
-//                        }
-//                    }
-//                });
+        View decorView = getWindow().getDecorView();
+        decorView.setOnSystemUiVisibilityChangeListener
+                (new View.OnSystemUiVisibilityChangeListener() {
+                    @Override
+                    public void onSystemUiVisibilityChange(int visibility) {
+                        // Note that system bars will only be "visible" if none of the
+                        // LOW_PROFILE, HIDE_NAVIGATION, or FULLSCREEN flags are set.
+                        if ((visibility & View.SYSTEM_UI_FLAG_LOW_PROFILE) == 0) {
+                            // TODO: The system bars are visible. Make any desired
+                            actionBar.show();
+                        } else {
+                            // TODO: The system bars are NOT visible. Make any desired
+                            actionBar.hide();
+                        }
+                    }
+                });
 
     }
 
@@ -283,37 +288,36 @@ public class Main2Activity extends AppCompatActivity {
      */
     private void zoomImageFromThumb(final View thumbView, Bitmap imageResId) {
         // If there's an animation in progress, cancel it immediately and proceed with this one.
-        final Dialog dialog = new Dialog(this, R.style.DialogTheme);
+//        final Dialog dialog = new Dialog(this, R.style.DialogTheme);
 //        if (Build.VERSION.SDK_INT < 16) {
-        dialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN, WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
+//        dialog.getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN, WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
 //        } else {
 //            View decorView = getWindow().getDecorView();
 //            int uiOptions = View.SYSTEM_UI_FLAG_FULLSCREEN;
 //            decorView.setSystemUiVisibility(uiOptions);
 //        }
 //        dialog.getWindow().setLayout(WindowManager.LayoutParams.MATCH_PARENT, WindowManager.LayoutParams.MATCH_PARENT);
-        View view = View.inflate(this, R.layout.full_screen, null);
-        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
-        dialog.setContentView(view, params);
+//        View view = View.inflate(this, R.layout.full_screen, null);
+//        ViewGroup.LayoutParams params = new ViewGroup.LayoutParams(ViewGroup.LayoutParams.MATCH_PARENT, ViewGroup.LayoutParams.MATCH_PARENT);
+//        dialog.setContentView(view, params);
 //        view.setOnClickListener(new View.OnClickListener() {
 //            @Override
 //            public void onClick(View v) {
 //                dialog.dismiss();
 //            }
 //        });
-        dialog.show();
-        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
-            @Override
-            public void onDismiss(DialogInterface dialog1) {
-                showStatuBar(dialog);
-            }
-        });
-        hideStatusBar(dialog);
+//        dialog.show();
+//        dialog.setOnDismissListener(new DialogInterface.OnDismissListener() {
+//            @Override
+//            public void onDismiss(DialogInterface dialog1) {
+//            }
+//        });
+        hideStatusBar();
         if (mCurrentAnimator != null) {
             mCurrentAnimator.cancel();
         }
         // Load the high-resolution "zoomed-in" image.
-        final ImageView expandedImageView = (ImageView) view.findViewById(R.id.ivFullScreen);
+        final ImageView expandedImageView = (ImageView) findViewById(R.id.expanded_image);
         expandedImageView.setImageBitmap(imageResId);
         // Calculate the starting and ending bounds for the zoomed-in image. This step
         // involves lots of math. Yay, math.
@@ -371,20 +375,20 @@ public class Main2Activity extends AppCompatActivity {
                     .with(ObjectAnimator.ofFloat(expandedImageView, View.SCALE_X, startScale, 1f))
                     .with(ObjectAnimator.ofFloat(expandedImageView, View.SCALE_Y, startScale, 1f));
         }
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
-            PropertyValuesHolder pchX = PropertyValuesHolder.ofFloat(View.X, startBounds.left, finalBounds.left);
-            PropertyValuesHolder pchY = PropertyValuesHolder.ofFloat(View.Y, startBounds.top, finalBounds.top);
-            PropertyValuesHolder pchScaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, startScale, 1f);
-            PropertyValuesHolder pchScaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, startScale, 1f);
-            ObjectAnimator.ofPropertyValuesHolder(expandedImageView, pchX, pchY, pchScaleX, pchScaleY).start();
-        }
+//        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.ICE_CREAM_SANDWICH) {
+//            PropertyValuesHolder pchX = PropertyValuesHolder.ofFloat(View.X, startBounds.left, finalBounds.left);
+//            PropertyValuesHolder pchY = PropertyValuesHolder.ofFloat(View.Y, startBounds.top, finalBounds.top);
+//            PropertyValuesHolder pchScaleX = PropertyValuesHolder.ofFloat(View.SCALE_X, startScale, 1f);
+//            PropertyValuesHolder pchScaleY = PropertyValuesHolder.ofFloat(View.SCALE_Y, startScale, 1f);
+//            ObjectAnimator.ofPropertyValuesHolder(expandedImageView, pchX, pchY, pchScaleX, pchScaleY).start();
+//        }
         set.setDuration(mShortAnimationDuration);
         set.setInterpolator(new DecelerateInterpolator());
         set.addListener(new AnimatorListenerAdapter() {
             @Override
             public void onAnimationStart(Animator animation) {
                 super.onAnimationStart(animation);
-//                hideStatusBar(dialog);
+                hideStatusBar();
             }
 
             @Override
@@ -428,7 +432,8 @@ public class Main2Activity extends AppCompatActivity {
                     public void onAnimationEnd(Animator animation) {
                         thumbView.setAlpha(1f);
                         expandedImageView.setVisibility(View.GONE);
-                        dialog.dismiss();
+//                        dialog.dismiss();
+                        showStatuBar();
                         mCurrentAnimator = null;
                     }
 
@@ -436,7 +441,7 @@ public class Main2Activity extends AppCompatActivity {
                     public void onAnimationCancel(Animator animation) {
                         thumbView.setAlpha(1f);
                         expandedImageView.setVisibility(View.GONE);
-                        dialog.dismiss();
+//                        dialog.dismiss();
                         mCurrentAnimator = null;
                     }
                 });
@@ -446,24 +451,24 @@ public class Main2Activity extends AppCompatActivity {
         });
     }
 
-    public void hideStatusBar(Dialog dialog) {
+    public void hideStatusBar() {
         if (Build.VERSION.SDK_INT < 16) {
             getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN,
                     WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
         } else {
             View decorView = getWindow().getDecorView();
-            int uiOptions = View.SYSTEM_UI_FLAG_LOW_PROFILE;//View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+            int uiOptions = View.SYSTEM_UI_FLAG_LOW_PROFILE;// View.SYSTEM_UI_FLAG_FULLSCREEN | View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
             decorView.setSystemUiVisibility(uiOptions);
         }
     }
 
-    public void showStatuBar(Dialog dialog) {
+    public void showStatuBar() {
         if (Build.VERSION.SDK_INT < 16) {
             getWindow().clearFlags(WindowManager.LayoutParams.FLAG_LAYOUT_IN_SCREEN);
         } else {
             View decorView = getWindow().getDecorView();
-//            int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
-            decorView.setSystemUiVisibility(0);
+            int uiOptions = View.SYSTEM_UI_FLAG_LAYOUT_STABLE;
+            decorView.setSystemUiVisibility(uiOptions);
         }
     }
 }
