@@ -4,4 +4,7 @@
 
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_picaso_vs_uil">PicasoVsUil</string>
+    <string name="uil">UIL</string>
+    <string name="picasso">Picasso</string>
 </resources>

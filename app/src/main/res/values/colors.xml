@@ -3,7 +3,6 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
-
     <color name="white">#FFFFFFFF</color>
     <color name="blue">#ff0079ff</color>
     <color name="gray_edittext">#ff929292</color>
@@ -76,7 +75,7 @@
     <color name="keyboard_key">#B9BEC0</color>
     <color name="profile_pic_background">#414632</color>
     <color name="card_shadow">#D9D9D9</color>
-
+    <color name="color_actionbar">#f8d444</color>
     // Profile Detail
     <color name="profile_bg">#F3F3F3</color>
     <color name="profile_actionbar">#607D8B</color>
@@ -133,5 +132,8 @@
 
 
     <color name="rippelColor">#FFFFFF</color>
+    <color name="picker_background">#ff7c7c7c</color>
 
+    <color name="contact_header_bg">#eeeeee</color>
+    <color name="profile_back_color">#ffffff</color>
 </resources>

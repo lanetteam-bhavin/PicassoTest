@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/llHeader"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:orientation="horizontal"
+    android:paddingTop="@dimen/margin_top_cnct">
+
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:orientation="vertical"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/ll_no_of_contacts"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:paddingBottom="2dp">
+
+            <TextView
+                android:id="@+id/txt_val_contacts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:layout_marginRight="@dimen/padding_left"
+                android:text="Contacts"
+                android:textAppearance="@style/cnct_header_title" />
+
+            <TextView
+                android:id="@+id/tv_contacts"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="51"
+                android:textAppearance="@style/cnct_header_title" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/tv_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_marginRight="@dimen/padding_left"
+            android:text="User Name"
+            android:textAppearance="@style/cnct_header_title" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/txtEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="abc@abc.com"
+            android:textAppearance="@style/cnct_header_title"
+            android:visibility="gone" />
+
+        <LinearLayout
+            android:id="@+id/ll_date_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/txt_val_created"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right"
+                android:gravity="right"
+                android:paddingBottom="2dp"
+                android:text="Member Since"
+                android:textAppearance="@style/cnct_header_title" />
+
+            <TextView
+                android:id="@+id/tv_date"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Dec 18th, 2015"
+                android:textAppearance="@style/cnct_header_title" />
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

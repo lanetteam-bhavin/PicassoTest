@@ -190,7 +190,7 @@ public class ContactListAdapter extends BaseAdapter implements Filterable {
                 }
             });
             if (picURL != null && !picURL.equalsIgnoreCase("") && !picURL.equals("null")) {
-//                Picasso.with(context).load(picURL).centerCrop().resizeDimen(R.dimen.dim65, R.dimen.dim65).into(viewHolder.imgUserPic);
+                Picasso.with(context).load(picURL).centerCrop().resizeDimen(R.dimen.dim65, R.dimen.dim65).into(viewHolder.imgUserPic);
 //                        new Target() {
 //                    @Override
 //                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom loadedFrom) {
@@ -215,27 +215,27 @@ public class ContactListAdapter extends BaseAdapter implements Filterable {
                 if (file.exists()) {
                     Log.d(TAG, "File is exists");
                     viewHolder.imgUserPic.setTag(fname);
-                    imageLoader.displayImage("file://" + file.getAbsolutePath(), viewHolder.imgUserPic, options1, new ImageLoadingListener() {
-                        @Override
-                        public void onLoadingStarted(String s, View view) {
-
-                        }
-
-                        @Override
-                        public void onLoadingFailed(String s, View view, FailReason failReason) {
-
-                        }
-
-                        @Override
-                        public void onLoadingComplete(String s, View view, Bitmap bitmap) {
-                            Log.d(TAG, "Bitmap is:" + bitmap.getHeight() + ":" + bitmap.getWidth() + ":" + s);
-                        }
-
-                        @Override
-                        public void onLoadingCancelled(String s, View view) {
-
-                        }
-                    });
+//                    imageLoader.displayImage("file://" + file.getAbsolutePath(), viewHolder.imgUserPic, options1, new ImageLoadingListener() {
+//                        @Override
+//                        public void onLoadingStarted(String s, View view) {
+//
+//                        }
+//
+//                        @Override
+//                        public void onLoadingFailed(String s, View view, FailReason failReason) {
+//
+//                        }
+//
+//                        @Override
+//                        public void onLoadingComplete(String s, View view, Bitmap bitmap) {
+//                            Log.d(TAG, "Bitmap is:" + bitmap.getHeight() + ":" + bitmap.getWidth() + ":" + s);
+//                        }
+//
+//                        @Override
+//                        public void onLoadingCancelled(String s, View view) {
+//
+//                        }
+//                    });
 //                    viewHolder.imgUserPic.setImageBitmap(bitmap);
 //                    Picasso.with(context).load(file).placeholder(R.drawable.xml_src_image).fit().into(viewHolder.imgUserPic);
                 } else {

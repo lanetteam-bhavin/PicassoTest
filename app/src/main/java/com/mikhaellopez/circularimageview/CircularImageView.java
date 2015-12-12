@@ -1,20 +1,4 @@
-/*
- * Copyright (C) 2013 The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *      http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
-
-package com.example.lcom53.picassotest;
+package com.mikhaellopez.circularimageview;
 
 import android.annotation.TargetApi;
 import android.content.Context;
@@ -27,19 +11,18 @@ import android.graphics.Paint;
 import android.graphics.Shader;
 import android.graphics.drawable.BitmapDrawable;
 import android.graphics.drawable.Drawable;
-import android.graphics.drawable.LayerDrawable;
 import android.media.ThumbnailUtils;
 import android.os.Build;
 import android.util.AttributeSet;
 import android.util.Log;
 import android.widget.ImageView;
 
+import com.example.lcom53.picassotest.R;
+
 /**
  * Created by Mikhael LOPEZ on 09/10/2015.
- * Sub-class of ImageView which automatically notifies the drawable when it is
- * being displayed.
  */
-public class RecyclingImageView extends ImageView {
+public class CircularImageView extends ImageView {
     // Default Values
     private static final float DEFAULT_SHADOW_RADIUS = 8.0f;
 
@@ -56,21 +39,21 @@ public class RecyclingImageView extends ImageView {
     private Paint paintBorder;
 
     //region Constructor & Init Method
-    public RecyclingImageView(final Context context) {
+    public CircularImageView(final Context context) {
         this(context, null);
     }
 
-    public RecyclingImageView(Context context, AttributeSet attrs) {
+    public CircularImageView(Context context, AttributeSet attrs) {
         this(context, attrs, R.attr.circularImageViewStyle);
     }
 
-    public RecyclingImageView(Context context, AttributeSet attrs, int defStyleAttr) {
+    public CircularImageView(Context context, AttributeSet attrs, int defStyleAttr) {
         super(context, attrs, defStyleAttr);
         init(context, attrs, defStyleAttr);
     }
 
     @TargetApi(Build.VERSION_CODES.LOLLIPOP)
-    public RecyclingImageView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
+    public CircularImageView(Context context, AttributeSet attrs, int defStyleAttr, int defStyleRes) {
         super(context, attrs, defStyleAttr, defStyleRes);
         init(context, attrs, defStyleAttr);
     }

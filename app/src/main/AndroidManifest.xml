@@ -30,6 +30,15 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".PicasoVsUil"
+            android:label="@string/title_activity_picaso_vs_uil"
+            android:parentActivityName=".Main2Activity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.example.lcom53.picassotest.Main2Activity" />
+        </activity>
     </application>
 
 </manifest>

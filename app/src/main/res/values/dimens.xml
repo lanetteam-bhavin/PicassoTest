@@ -1,5 +1,5 @@
+<?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- Default screen margins, per the Android Design guidelines. -->
     <dimen name="fab_size_normal">56dp</dimen>
     <dimen name="dim_padding_flag">4dp</dimen>
     <item name="scroll_position" type="integer">750</item>
@@ -138,12 +138,16 @@
     <dimen name="floating_send_button_bottom_margin">-10dp</dimen>
     <dimen name="floating_send_button_right_margin">-5dp</dimen>
     <dimen name="detail_backdrop_height">300dp</dimen>
-    <dimen name="card_margin">16dp</dimen>
+    <dimen name="card_margin">8dp</dimen>
     <dimen name="fab_margin">16dp</dimen>
     <dimen name="list_item_avatar_size">40dp</dimen>
     <dimen name="scroll_height">235dp</dimen>
     <dimen name="scroll_height_h">180dp</dimen>
     <dimen name="emojikey">230dp</dimen>
     <dimen name="imageheight">350dp</dimen>
-
+    <dimen name="margin_left_cnct">8dp</dimen>
+    <dimen name="margin_right_cnct">16dp</dimen>
+    <dimen name="margin_top_cnct">14dp</dimen>
+    <dimen name="margin_bottom_cnct">16dp</dimen>
+    <dimen name="cnct_curve">2dp</dimen>
 </resources>
