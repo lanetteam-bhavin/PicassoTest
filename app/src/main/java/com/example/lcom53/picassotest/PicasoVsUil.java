@@ -1,5 +1,6 @@
 package com.example.lcom53.picassotest;
 
+import android.app.ProgressDialog;
 import android.graphics.Bitmap;
 import android.graphics.Matrix;
 import android.graphics.Point;
@@ -76,7 +77,10 @@ public class PicasoVsUil extends AppCompatActivity {
         setContentView(R.layout.activity_picaso_vs_uil);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
+        ProgressDialog progressDialog = new ProgressDialog(this,ProgressDialog.STYLE_SPINNER);
+        progressDialog.setCanceledOnTouchOutside(true);
+        progressDialog.setMessage("Loading...");
+        progressDialog.show();
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override

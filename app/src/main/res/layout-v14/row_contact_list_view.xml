@@ -7,10 +7,10 @@
     android:orientation="vertical">
 
     <LinearLayout
-        android:layout_marginTop="32dp"
         android:id="@+id/sort_key_layout"
         android:layout_width="fill_parent"
         android:layout_height="20dp"
+        android:layout_marginTop="32dp"
         android:background="@color/contacts_header">
 
         <TextView
@@ -45,9 +45,9 @@
 
             <com.example.lcom53.picassotest.RecyclingImageView
                 android:id="@+id/iv_contact_row_user_image"
-                android:scaleType="centerInside"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
+                android:scaleType="centerInside"
                 android:src="@drawable/xml_src_image" />
 
             <ImageView

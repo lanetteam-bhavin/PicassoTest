@@ -10,7 +10,7 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
-    <style name="HomeTheme" parent="Theme.AppCompat.NoActionBar">
+    <style name="HomeTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowActionBarOverlay">true</item>
         <item name="android:windowAnimationStyle">@null</item>
         <item name="android:actionBarStyle">@style/MyActionBar</item>
@@ -22,13 +22,13 @@
         <item name="colorAccent">@color/dark_blue</item>
         <item name="actionBarSize">@dimen/dim_actionbar_size</item>
         <item name="actionModeStyle">@style/LStyled.ActionMode</item>
-        <item name="android:dialogTheme">@style/mydialog</item>
-        <item name="dialogTheme">@style/mydialog</item>
-        <item name="android:alertDialogTheme">@style/mydialog</item>
     </style>
 
-    <style name="mydialog" parent="@style/Theme.AppCompat.Dialog">
-        <item name="android:colorBackground">@color/white</item>
+    <style name="HomeTheme1" parent="Theme.AppCompat.NoActionBar"></style>
+
+    <style name="mydialog" parent="@android:style/Theme.Holo.Dialog">
+        <item name="android:windowBackground">@android:color/white</item>
+        <item name="android:windowContentOverlay">@null</item>
     </style>
 
     <style name="AppTheme.NoActionBar">

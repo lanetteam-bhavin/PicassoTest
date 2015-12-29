@@ -34,7 +34,7 @@
             android:name=".PicasoVsUil"
             android:label="@string/title_activity_picaso_vs_uil"
             android:parentActivityName=".Main2Activity"
-            android:theme="@style/AppTheme.NoActionBar">
+            android:theme="@style/HomeTheme">
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.example.lcom53.picassotest.Main2Activity" />
