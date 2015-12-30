@@ -2,7 +2,10 @@ package com.example.lcom53.picassotest;
 
 import android.app.ProgressDialog;
 import android.graphics.Bitmap;
+import android.graphics.BitmapFactory;
+import android.graphics.Canvas;
 import android.graphics.Matrix;
+import android.graphics.Paint;
 import android.graphics.Point;
 import android.graphics.RectF;
 import android.os.AsyncTask;
@@ -77,7 +80,7 @@ public class PicasoVsUil extends AppCompatActivity {
         setContentView(R.layout.activity_picaso_vs_uil);
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-        ProgressDialog progressDialog = new ProgressDialog(this,ProgressDialog.STYLE_SPINNER);
+        ProgressDialog progressDialog = new ProgressDialog(this, ProgressDialog.STYLE_SPINNER);
         progressDialog.setCanceledOnTouchOutside(true);
         progressDialog.setMessage("Loading...");
         progressDialog.show();
@@ -109,27 +112,33 @@ public class PicasoVsUil extends AppCompatActivity {
         File file = new File(customCacheDirectory, localStorage);
         imageLoader.displayImage("file://" + file.getAbsolutePath(), mIvUil, options);
         imageLoader.displayImage("file://" + file.getAbsolutePath(), mivUil1, options);
-        imageLoader.loadImage("file://" + file.getAbsolutePath(), options, new ImageLoadingListener() {
-            @Override
-            public void onLoadingStarted(String s, View view) {
-
-            }
-
-            @Override
-            public void onLoadingFailed(String s, View view, FailReason failReason) {
-
-            }
-
-            @Override
-            public void onLoadingComplete(String s, View view, Bitmap bitmap) {
-                setBitmapForUserImage(bitmap, true);
-            }
-
-            @Override
-            public void onLoadingCancelled(String s, View view) {
-
-            }
-        });
+//        imageLoader.loadImage("file://" + file.getAbsolutePath(), options, new ImageLoadingListener() {
+//            @Override
+//            public void onLoadingStarted(String s, View view) {
+//                Log.d(TAG, "Load start :" + s);
+//            }
+//
+//            @Override
+//            public void onLoadingFailed(String s, View view, FailReason failReason) {
+//                Log.d(TAG, "Load Failed :" + s + "::" + failReason.getCause().getMessage());
+//            }
+//
+//            @Override
+//            public void onLoadingComplete(String s, View view, Bitmap bitmap) {
+//                Log.d(TAG, "Load complete :" + s);
+//                setBitmapForUserImage(bitmap, true);
+//            }
+//
+//            @Override
+//            public void onLoadingCancelled(String s, View view) {
+//                Log.d(TAG, "Load cancelled" + s);
+//            }
+//        });
+        BitmapFactory.Options options = new BitmapFactory.Options();
+        options.inScaled = false;
+        Bitmap bitmap = BitmapFactory.decodeFile(file.getAbsolutePath(), options);
+        img_user_photo.setImageBitmap(bitmap);
+//        setBitmapForUserImage(bitmap,false);
     }
 
     boolean isFirstTime = false;
@@ -202,6 +211,20 @@ public class PicasoVsUil extends AppCompatActivity {
             Log.d(TAG, "New Height :" + newHeight + ":newWidth:" + newWidth);
             m.setRectToRect(new RectF(0, 0, Localbitmap.getWidth(), Localbitmap.getHeight()), new RectF(0, 0, newWidth, newHeight), Matrix.ScaleToFit.CENTER);
             Bitmap bitmap1 = Bitmap.createBitmap(Localbitmap, 0, 0, Localbitmap.getWidth(), Localbitmap.getHeight(), m, true);
+//            Bitmap bitmap1 = Localbitmap.createScaledBitmap(Localbitmap, (int) newWidth, (int) newHeight, false);
+//            Bitmap bitmap1 = Bitmap.createBitmap((int) newWidth, (int) newHeight, Bitmap.Config.ARGB_8888);
+//
+//            float ratioX = newWidth / (float) Localbitmap.getWidth();
+//            float ratioY = newHeight / (float) Localbitmap.getHeight();
+//            float middleX = newWidth / 2.0f;
+//            float middleY = newHeight / 2.0f;
+//
+//            Matrix scaleMatrix = new Matrix();
+//            scaleMatrix.setScale(ratioX, ratioY, middleX, middleY);
+//
+//            Canvas canvas = new Canvas(bitmap1);
+//            canvas.setMatrix(scaleMatrix);
+//            canvas.drawBitmap(Localbitmap, middleX - Localbitmap.getWidth() / 2, middleY - Localbitmap.getHeight() / 2, new Paint(Paint.FILTER_BITMAP_FLAG));
             imageMaxHeight1 = (int) newHeight;
             if (imageMaxHeight1 >= height) {
                 imageMaxHeight1 = (int) (height * 0.8);

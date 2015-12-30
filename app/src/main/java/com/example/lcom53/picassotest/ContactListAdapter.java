@@ -51,8 +51,8 @@ public class ContactListAdapter extends BaseAdapter implements Filterable {
     Cache cache;
     DisplayImageOptions options;
     DisplayImageOptions options1;
-    ImageLoader imageLoader = ImageLoader.getInstance();
-    ImageLoaderConfiguration config;
+    //    ImageLoader imageLoader = ImageLoader.getInstance();
+//    ImageLoaderConfiguration config;
     File customCacheDirectory;
     ViewHolder viewHolder;
 
@@ -105,9 +105,9 @@ public class ContactListAdapter extends BaseAdapter implements Filterable {
 //                    }
 //                })
                 .build();
-        config = new ImageLoaderConfiguration.Builder(context).
-                build();
-        imageLoader.init(config);
+//        config = new ImageLoaderConfiguration.Builder(context).
+//                build();
+//        imageLoader.init(config);
         customCacheDirectory = new File(Environment.getExternalStorageDirectory().getAbsoluteFile() + "/" + CACHE_DIR);
         if (!customCacheDirectory.exists()) {
             boolean isCreated = customCacheDirectory.mkdirs();
@@ -190,7 +190,7 @@ public class ContactListAdapter extends BaseAdapter implements Filterable {
                 }
             });
             if (picURL != null && !picURL.equalsIgnoreCase("") && !picURL.equals("null")) {
-                Picasso.with(context).load(picURL).centerCrop().resizeDimen(R.dimen.dim65, R.dimen.dim65).into(viewHolder.imgUserPic);
+//                Picasso.with(context).load(picURL).centerCrop().resizeDimen(R.dimen.dim65, R.dimen.dim65).into(viewHolder.imgUserPic);
 //                        new Target() {
 //                    @Override
 //                    public void onBitmapLoaded(Bitmap bitmap, Picasso.LoadedFrom loadedFrom) {
@@ -209,88 +209,75 @@ public class ContactListAdapter extends BaseAdapter implements Filterable {
 //
 //                    }
 //                });
-//                String fname = "" + data.get(position).username + "_" + picURL.substring(picURL.lastIndexOf("/") != -1 ? picURL.lastIndexOf("/") + 1 : 0) + ".jpg";
-//                File file = new File(customCacheDirectory, fname);
-//                Log.d(TAG, "We pass :" + picURL);
-//                if (file.exists()) {
-//                    Log.d(TAG, "File is exists");
-//                    viewHolder.imgUserPic.setTag(fname);
-//                    imageLoader.displayImage("file://" + file.getAbsolutePath(), viewHolder.imgUserPic, options1, new ImageLoadingListener() {
-//                        @Override
-//                        public void onLoadingStarted(String s, View view) {
-//
-//                        }
-//
-//                        @Override
-//                        public void onLoadingFailed(String s, View view, FailReason failReason) {
-//
-//                        }
-//
-//                        @Override
-//                        public void onLoadingComplete(String s, View view, Bitmap bitmap) {
-//                            Log.d(TAG, "Bitmap is:" + bitmap.getHeight() + ":" + bitmap.getWidth() + ":" + s);
-//                        }
-//
-//                        @Override
-//                        public void onLoadingCancelled(String s, View view) {
-//
-//                        }
-//                    });
+                String fname = "image_" + picURL.substring(picURL.lastIndexOf("/") != -1 ? picURL.lastIndexOf("/") + 1 : 0) + ".jpg";
+                File file = new File(customCacheDirectory, fname);
+                Log.d(TAG, "We pass :" + picURL);
+                if (file.exists()) {
+                    Log.d(TAG, "File is exists");
+                    viewHolder.imgUserPic.setTag(fname);
+                    ImageLoader.getInstance().displayImage("file://" + file.getAbsolutePath(), viewHolder.imgUserPic, options1, new ImageLoadingListener() {
+                        @Override
+                        public void onLoadingStarted(String s, View view) {
+
+                        }
+
+                        @Override
+                        public void onLoadingFailed(String s, View view, FailReason failReason) {
+
+                        }
+
+                        @Override
+                        public void onLoadingComplete(String s, View view, Bitmap bitmap) {
+                            Log.d(TAG, "Bitmap is:" + bitmap.getHeight() + ":" + bitmap.getWidth() + ":" + s);
+                        }
+
+                        @Override
+                        public void onLoadingCancelled(String s, View view) {
+
+                        }
+                    });
 //                    viewHolder.imgUserPic.setImageBitmap(bitmap);
 //                    Picasso.with(context).load(file).placeholder(R.drawable.xml_src_image).fit().into(viewHolder.imgUserPic);
-//                } else {
-//                    imageLoader.displayImage(picURL, viewHolder.imgUserPic, options
-//                            , new ImageLoadingListener() {
-//                        @Override
-//
-//
-//                        public void onLoadingStarted(String s, View view) {
-//
-//                        }
-//
-//                        @Override
-//
-//
-//                        public void onLoadingFailed(String s, View view, FailReason failReason) {
-//
-//                        }
-//
-//                        @Override
-//
-//
-//                        public void onLoadingComplete(String s, View view, Bitmap bitmap) {
-//                            Log.d(TAG, "Downloaded Bitmap is:" + bitmap.getHeight() + ":" + bitmap.getWidth() + ":" + s);
-//                            String UserName = (String) view.getTag(R.string.app_name);
-//                            if (UserName != null) {
-//                                String fname = "" + UserName + "_" + s.substring(s.lastIndexOf("/") != -1 ? s.lastIndexOf("/") + 1 : 0) + ".jpg";
-//                                if (!customCacheDirectory.exists()) {
-//                                    boolean created = customCacheDirectory.mkdirs();
-//                                    Log.d(TAG, "Created :" + created);
-//                                } else {
-//                                    Log.d(TAG, "Already exists");
-//                                }
-//                                File file = new File(customCacheDirectory, fname);
-//                                try {
-//                                    if (file.exists()) file.delete();
-//                                    FileOutputStream out = new FileOutputStream(file);
-//                                    bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
-//                                    out.flush();
-//                                    out.close();
-//                                } catch (Exception e) {
-//                                    e.printStackTrace();
-//                                }
-//                                Log.d(TAG, "File saved as:" + file.getAbsolutePath());
-//                            }
-//                        }
-//
-//                        @Override
-//
-//
-//                        public void onLoadingCancelled(String s, View view) {
-//
-//                        }
-//                    });
-//                }
+                } else {
+                    ImageLoader.getInstance().displayImage(picURL, viewHolder.imgUserPic, options);
+                    ImageLoader.getInstance().loadImage(picURL, options
+                            , new ImageLoadingListener() {
+                                @Override
+                                public void onLoadingStarted(String s, View view) {
+
+                                }
+
+                                @Override
+                                public void onLoadingFailed(String s, View view, FailReason failReason) {
+
+                                }
+
+                                @Override
+                                public void onLoadingComplete(String s, View view, Bitmap bitmap) {
+                                    Log.d(TAG, "Downloaded Bitmap is:" + bitmap.getHeight() + ":" + bitmap.getWidth() + ":" + s);
+                                    //                                    String UserName = (String) view.getTag(R.string.app_name);
+                                    if (s != null) {
+                                        String fname = "image_" + s.substring(s.lastIndexOf("/") != -1 ? s.lastIndexOf("/") + 1 : 0) + ".jpg";
+                                        File file = new File(customCacheDirectory, fname);
+                                        try {
+                                            if (file.exists()) file.delete();
+                                            FileOutputStream out = new FileOutputStream(file);
+                                            bitmap.compress(Bitmap.CompressFormat.JPEG, 100, out);
+                                            out.flush();
+                                            out.close();
+                                        } catch (Exception e) {
+                                            e.printStackTrace();
+                                        }
+                                        Log.d(TAG, "File saved as:" + file.getAbsolutePath());
+                                    }
+                                }
+
+                                @Override
+                                public void onLoadingCancelled(String s, View view) {
+
+                                }
+                            });
+                }
             } else {
                 viewHolder.imgUserPic.setImageDrawable(context.getResources().getDrawable(R.drawable.xml_src_image));
             }
